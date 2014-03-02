@@ -104,7 +104,7 @@ module.exports = (grunt) ->
       "#{filename}.min#{ext}"
 
     # this could be changed to minify all JS files, not just core
-    findFilesIn(outputJsDir, '**/shCore.js').forEach (file) ->
+    findFilesIn(outputJsDir, '**/*.js').forEach (file) ->
       compressJs readFile(file), (err, source) ->
         writeFile path.join(outputJsDir, path.basename(addMinExt file)), source
 
